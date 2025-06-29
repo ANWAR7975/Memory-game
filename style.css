@@ -1,0 +1,138 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 15px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  .card {
+    width: 100px;
+    height: 100px;
+    background-color: #1e90ff;
+    color: white;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    user-select: none;
+    transition: transform 0.3s;
+  }
+  
+  .card.flipped {
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #1e90ff;
+    cursor: default;
+  }
+  
+  .card.matched {
+    background-color: #32cd32;
+    color: white;
+    cursor: default;
+  }
+/* Logo Animation */
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff6ec4, #7873f5, #4ade80);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: logoGradient 5s ease infinite;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  }
+  
+  /* Glowing Animated Background */
+  body {
+    position: relative;
+    overflow-x: hidden;
+    background: radial-gradient(circle, #1e1e2f 0%, #15151f 100%);
+    min-height: 100vh;
+    color: white;
+  }
+  
+  body::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, #ff6ec4, #7873f5, #4ade80, #ff6ec4);
+    animation: spin 20s linear infinite;
+    z-index: -1;
+    opacity: 0.3;
+    border-radius: 50%;
+    filter: blur(100px);
+  }
+  
+  @keyframes logoGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .game-info {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  #restart-btn {
+    padding: 8px 16px;
+    border: none;
+    background: #ff6ec4;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  #restart-btn:hover {
+    background: #e057b7;
+  }
+  
+  #win-message {
+    margin-top: 30px;
+    font-size: 2rem;
+    animation: popUp 1s ease-in-out infinite alternate;
+    color: #4ade80;
+    font-weight: bold;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @keyframes popUp {
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(1.1); opacity: 1; }
+  }
+  
